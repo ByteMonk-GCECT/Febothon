@@ -5,11 +5,12 @@ $secondary: #610094;
 $primary_text: white;
 $secondary_text: #ff00e4;
 $nav-primary: #080056;
+$accent-color: #f2e49b;
 //text mixins
 @mixin section_head {
   h1 {
     padding: 2%;
-    font-size: 1rem;
+    font-size: 2rem !important;
     font-family: "Press Start 2P", cursive;
     color: $primary_text;
     font-weight: 900;

@@ -17,13 +17,24 @@ body {
   margin: 2%;
   object-fit: cover;
 }
+.moon {
+  width: 10vw;
+  position: absolute;
+  z-index: 1;
+  left: 70vw;
+  top: 10vh;
+}
+.timeline {
+  width: 100vw;
+}
 .nav {
+  :first-child {
+    margin-left: 1.5rem;
+  }
   position: fixed;
-  left: 1.5rem;
-  top: 0.2rem;
   background: none;
   display: flex;
-  height: 5vh;
+  height: 6vh;
   width: 100%;
   .nav-item {
     p {
@@ -32,16 +43,11 @@ body {
     }
     text-decoration: none;
     padding: 1rem;
+    padding-top: 0;
     display: inline;
     width: fit-content !important;
-    height: fit-content;
-    background: none;
-    color: white !important;
-    font-family: Roboto, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu,
-      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    margin-right: 1.5rem;
     font-size: 1rem;
-    color: $primary_text;
+    color: $primary_text !important;
     transition: 0.4s ease-in-out;
     font-family: "Bungee Inline", cursive;
     background: none;
@@ -55,15 +61,37 @@ body {
   //   margin-right: 5%;
   // }
 }
+.about {
+  .text {
+    padding: 1rem;
+    width: fit-content;
+    color: $primary_text;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+  }
+  display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.line-right {
+  margin: 0;
+  display: inline;
+  height: 60vh;
+}
+.sponsors_text {
+  margin: 1rem;
+  padding: 1rem !important;
+  width: fit-content;
+  color: $primary_text;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+}
 .container {
   @include section_head;
   transition: ease-in-out;
-  background-color: $secondary;
   border-radius: 5%;
-  margin: 5%;
-  width: 90%;
   height: fit-content;
-  border: 1px solid white;
+  padding: 1rem;
 }
 .splash {
   justify-content: center;
@@ -82,14 +110,14 @@ body {
     justify-content: space-between;
     .splash-cta {
       margin-top: 2%;
-      width: 30%;
+      width: fit-content;
       height: 10%;
       font-size: 1.3rem;
-      color: $primary_text;
+      color: $accent-color;
       transition: 0.4s ease-in-out;
       font-family: "Bungee Inline", cursive;
       background: none;
-      border: 1px solid white;
+      border: 1px solid $accent-color;
 
       &:hover {
         background-color: white;
@@ -99,10 +127,49 @@ body {
     }
   }
 }
+
+// clock section
+.clock {
+  @include section_head;
+  text-align: center;
+}
+
+#clockdiv {
+  margin: 2vw;
+  font-family: "Bungee Inline", cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  padding: 1rem;
+}
+
+#clockdiv > div {
+  margin: 2vw;
+  padding: 1vw;
+  border-radius: 5%;
+  background-color: $secondary;
+  display: inline-block;
+}
+
+#clockdiv div > span {
+  padding: 0.3rem;
+  border-radius: 5%;
+  background-color: $primary;
+  display: inline-block;
+  width: 5vw;
+}
+
+.smalltext {
+  padding-top: 0.5rem;
+  font-size: 1rem;
+}
 @media only screen and (min-width: 1001px) and (max-width: 1300px) {
   .bg_img {
     margin-left: 1%;
-    height: 60vh;
+    height: 70vh;
   }
   .logo {
     height: 10vh;
@@ -113,12 +180,54 @@ body {
   }
 }
 @media only screen and (max-width: 1000px) {
+  #clockdiv {
+    font-size: 0.8rem;
+  }
+  .smalltext {
+    padding-top: 0.5rem;
+    font-size: 0.5rem;
+  }
+  .get {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .left-half,
+  .right-half {
+    h1 {
+      font-size: 2rem !important;
+    }
+    p {
+      font-size: 0.8rem !important;
+    }
+  }
+  .sponsors_text {
+    font-size: 0.8rem !important;
+  }
+  .text {
+    font-size: 0.8rem !important;
+  }
+  .line-right {
+    height: 10vh;
+  }
+  .container {
+    .elem {
+      width: 40%;
+      padding-top: 3vh;
+      .caption {
+        font-size: 0.8rem !important ;
+      }
+    }
+    h1 {
+      font-size: 1.5rem !important;
+    }
+  }
   .bg_img {
     height: 70vh;
   }
   .nav {
     margin: auto;
-    width: 90%;
+    width: 100%;
     justify-content: space-around;
     .nav-item {
       margin-right: 0;
@@ -140,4 +249,171 @@ body {
     font-size: 2.4vw !important;
     width: fit-content !important;
   }
+}
+//AboutUs-styling
+.flex-container {
+  .icon1 {
+    width: 10vw;
+    margin: 0.2rem;
+    border-radius: 50%;
+  }
+  .elem {
+    text-align: center;
+    vertical-align: middle;
+    color: $primary_text;
+    transition: 0.4s ease-in-out;
+    .caption {
+      margin-top: 0.2rem;
+      font-size: 1.2rem;
+      font-family: "Orbitron", sans-serif;
+    }
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: inherit;
+  justify-content: space-around;
+}
+
+// colab section styling
+.get {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: white;
+  font-size: 1.5rem;
+  width: 100%;
+  font-family: "Bungee Inline", cursive;
+  justify-content: space-around;
+}
+.get-involved {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  margin-top: 0;
+  justify-content: space;
+}
+.get-involved h2 {
+  text-align: left;
+}
+@media (max-width: 900px) {
+  .right-half,
+  .left-half {
+    width: 100%;
+  }
+}
+.left-half {
+  /* background-color: green; */
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    text-align: left;
+    font-size: 1rem;
+  }
+  display: inline-block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 500px;
+  margin-top: 0;
+  width: 35%;
+  text-align: center;
+  border-radius: 12px;
+  font-family: "Oswald", sans-serif;
+}
+.right-half {
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    text-align: left;
+    font-size: 1rem;
+  }
+  /* background-color:  blueviolet; */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 500px;
+  margin-top: 0;
+  width: 35%;
+  text-align: center;
+  border-radius: 12px;
+  font-family: "Oswald", sans-serif;
+}
+
+.register-btn {
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  display: inline-flex;
+  justify-content: center;
+  max-width: 100%;
+  margin-top: 2%;
+  width: fit-content;
+  height: 10%;
+  font-size: 1.3rem;
+
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  font-family: "Bungee Inline", cursive;
+  background: none;
+  border: 1px solid black;
+  /* min-width: 0; */
+  flex-basis: 0;
+}
+
+.register-btn > span {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.register-btn:hover {
+  background: #bc54cc;
+  /* background-image: -webkit-linear-gradient(top, #bc54cc, #01060a);
+  background-image: -moz-linear-gradient(top, #bc54cc, #01060a);
+  background-image: -ms-linear-gradient(top, #bc54cc, #01060a);
+  background-image: -o-linear-gradient(top, #bc54cc, #01060a);
+  background-image: linear-gradient(to bottom, #bc54cc, #01060a);
+  text-decoration: none; */
+  background-color: white;
+  color: #3f0071;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.white_container {
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background-color: $primary_text;
+}
+
+
+
+
+//-- FOOTER --//
+.footer-container
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: calc(100% - 7rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+  h5
+  {
+    color: $primary_text !important;
+  }
+
+  
 }
