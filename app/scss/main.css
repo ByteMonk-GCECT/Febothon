@@ -21,6 +21,14 @@ body {
      object-fit: cover;
 }
 
+.moon {
+  width: 10vw;
+  position: absolute;
+  z-index: 1;
+  left: 70vw;
+  top: 10vh;
+}
+
 .timeline {
   width: 100vw;
 }
@@ -67,15 +75,49 @@ body {
           transform: scale(1.2);
 }
 
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.about .text {
+  padding: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+}
+
+.line-right {
+  margin: 0;
+  display: inline;
+  height: 60vh;
+}
+
+.sponsors_text {
+  margin: 1rem;
+  padding: 1rem !important;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+}
+
 .container {
   -webkit-transition: ease-in-out;
   transition: ease-in-out;
   border-radius: 5%;
-  margin: 5%;
-  width: 90%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  padding: 1rem;
 }
 
 .container h1 {
@@ -118,12 +160,12 @@ body {
   width: fit-content;
   height: 10%;
   font-size: 1.3rem;
-  color: white;
+  color: #f2e49b;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
   font-family: "Bungee Inline", cursive;
   background: none;
-  border: 1px solid white;
+  border: 1px solid #f2e49b;
 }
 
 .splash .cta .splash-cta:hover {
@@ -131,6 +173,55 @@ body {
   color: #3f0071;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.clock {
+  text-align: center;
+}
+
+.clock h1 {
+  padding: 2%;
+  font-size: 2rem !important;
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  font-weight: 900;
+}
+
+#clockdiv {
+  margin: 2vw;
+  font-family: "Bungee Inline", cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  padding: 1rem;
+}
+
+#clockdiv > div {
+  margin: 2vw;
+  padding: 1vw;
+  border-radius: 5%;
+  background-color: #610094;
+  display: inline-block;
+}
+
+#clockdiv div > span {
+  padding: 0.3rem;
+  border-radius: 5%;
+  background-color: #3f0071;
+  display: inline-block;
+  width: 5vw;
+}
+
+.smalltext {
+  padding-top: 0.5rem;
+  font-size: 1rem;
 }
 
 @media only screen and (min-width: 1001px) and (max-width: 1300px) {
@@ -148,23 +239,42 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
+  #clockdiv {
+    font-size: 0.8rem;
+  }
+  .smalltext {
+    padding-top: 0.5rem;
+    font-size: 0.5rem;
+  }
+  .get h2 {
+    font-size: 1.5rem;
+  }
   .left-half h1,
   .right-half h1 {
-    font-size: 3.5vw;
+    font-size: 2rem !important;
   }
   .left-half p,
   .right-half p {
-    font-size: 2vw;
+    font-size: 0.8rem !important;
+  }
+  .sponsors_text {
+    font-size: 0.8rem !important;
+  }
+  .text {
+    font-size: 0.8rem !important;
+  }
+  .line-right {
+    height: 10vh;
   }
   .container .elem {
     width: 40%;
     padding-top: 3vh;
   }
   .container .elem .caption {
-    font-size: 0.5rem !important;
+    font-size: 0.8rem !important;
   }
   .container h1 {
-    font-size: 1rem !important;
+    font-size: 1.5rem !important;
   }
   .bg_img {
     height: 70vh;
@@ -351,7 +461,6 @@ body {
   width: fit-content;
   height: 10%;
   font-size: 1.3rem;
-  color: black;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
   font-family: "Bungee Inline", cursive;
@@ -360,6 +469,11 @@ body {
   /* min-width: 0; */
   -ms-flex-preferred-size: 0;
       flex-basis: 0;
+}
+
+.register-btn a {
+  text-decoration: none !important;
+  color: black !important;
 }
 
 .register-btn > span {

@@ -17,6 +17,13 @@ body {
   margin: 2%;
   object-fit: cover;
 }
+.moon {
+  width: 10vw;
+  position: absolute;
+  z-index: 1;
+  left: 70vw;
+  top: 10vh;
+}
 .timeline {
   width: 100vw;
 }
@@ -54,13 +61,37 @@ body {
   //   margin-right: 5%;
   // }
 }
+.about {
+  .text {
+    padding: 1rem;
+    width: fit-content;
+    color: $primary_text;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+  }
+  display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.line-right {
+  margin: 0;
+  display: inline;
+  height: 60vh;
+}
+.sponsors_text {
+  margin: 1rem;
+  padding: 1rem !important;
+  width: fit-content;
+  color: $primary_text;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+}
 .container {
   @include section_head;
   transition: ease-in-out;
   border-radius: 5%;
-  margin: 5%;
-  width: 90%;
   height: fit-content;
+  padding: 1rem;
 }
 .splash {
   justify-content: center;
@@ -82,11 +113,11 @@ body {
       width: fit-content;
       height: 10%;
       font-size: 1.3rem;
-      color: $primary_text;
+      color: $accent-color;
       transition: 0.4s ease-in-out;
       font-family: "Bungee Inline", cursive;
       background: none;
-      border: 1px solid white;
+      border: 1px solid $accent-color;
 
       &:hover {
         background-color: white;
@@ -95,6 +126,45 @@ body {
       }
     }
   }
+}
+
+// clock section
+.clock {
+  @include section_head;
+  text-align: center;
+}
+
+#clockdiv {
+  margin: 2vw;
+  font-family: "Bungee Inline", cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  padding: 1rem;
+}
+
+#clockdiv > div {
+  margin: 2vw;
+  padding: 1vw;
+  border-radius: 5%;
+  background-color: $secondary;
+  display: inline-block;
+}
+
+#clockdiv div > span {
+  padding: 0.3rem;
+  border-radius: 5%;
+  background-color: $primary;
+  display: inline-block;
+  width: 5vw;
+}
+
+.smalltext {
+  padding-top: 0.5rem;
+  font-size: 1rem;
 }
 @media only screen and (min-width: 1001px) and (max-width: 1300px) {
   .bg_img {
@@ -110,25 +180,46 @@ body {
   }
 }
 @media only screen and (max-width: 1000px) {
+  #clockdiv {
+    font-size: 0.8rem;
+  }
+  .smalltext {
+    padding-top: 0.5rem;
+    font-size: 0.5rem;
+  }
+  .get {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
   .left-half,
   .right-half {
     h1 {
-      font-size: 3.5vw;
+      font-size: 2rem !important;
     }
     p {
-      font-size: 2vw;
+      font-size: 0.8rem !important;
     }
+  }
+  .sponsors_text {
+    font-size: 0.8rem !important;
+  }
+  .text {
+    font-size: 0.8rem !important;
+  }
+  .line-right {
+    height: 10vh;
   }
   .container {
     .elem {
       width: 40%;
       padding-top: 3vh;
       .caption {
-        font-size: 0.5rem !important ;
+        font-size: 0.8rem !important ;
       }
     }
     h1 {
-      font-size: 1rem !important;
+      font-size: 1.5rem !important;
     }
   }
   .bg_img {
@@ -256,6 +347,11 @@ body {
 }
 
 .register-btn {
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
   display: inline-flex;
   justify-content: center;
   max-width: 100%;
@@ -263,7 +359,7 @@ body {
   width: fit-content;
   height: 10%;
   font-size: 1.3rem;
-  color: black;
+
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
   font-family: "Bungee Inline", cursive;
